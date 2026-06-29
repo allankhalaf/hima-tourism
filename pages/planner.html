@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صمم رحلتك المخصصة - هيما</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/planner.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+  <!-- شريط التنقل -->
+<nav class="navbar navbar-expand-lg navbar-planeteer fixed-top" id="mainNav">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="../index.html">
+      <img src="../images/logo.png" alt="هيما" class="brand-logo">
+      <span class="brand-text">هيما</span>
+    </a>
+    
+    <!-- الروابط -->
+   <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills">
+  <li class="nav-item"><a class="nav-link" href="../index.html">الرئيسية</a></li>
+  <li class="nav-item"><a class="nav-link" href="../index.html#safari-trips">الرحلات</a></li>
+  <li class="nav-item"><a class="nav-link" href="../index.html#reviews">التقييمات</a></li>
+  <li class="nav-item"><a class="nav-link" href="gallery.html">استكشف سوريا</a></li>
+  <li class="nav-item"><a class="nav-link" href="checklist.html">دليل المعدات</a></li>
+  <li class="nav-item"><a class="nav-link" href="planner.html">صمم رحلتك</a></li>
+  <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+</ul>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="page-hero planner-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>صمم رحلتك المخصصة</h1>
+        <p>خطط مغامرتك بالطريقة التي تناسبك تماماً</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Price Widget -->
+  <div class="live-price-widget" id="livePriceWidget">
+    <div class="price-content">
+      <div class="price-icon">
+        <i class="bi bi-calculator"></i>
+      </div>
+      <div class="price-info">
+        <span class="price-label">التكلفة التقديرية</span>
+        <span class="price-value" id="livePrice">0</span>
+        <span class="price-currency">ل.س</span>
+      </div>
+    </div>
+    <div class="price-breakdown" id="priceBreakdown">
+      <div class="breakdown-item">
+        <span>الوجهة:</span>
+        <span id="breakdownDestination">-</span>
+      </div>
+      <div class="breakdown-item">
+        <span>الأيام:</span>
+        <span id="breakdownDays">0 × 0</span>
+      </div>
+      <div class="breakdown-item">
+        <span>الأنشطة:</span>
+        <span id="breakdownActivities">0 ل.س</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Planner Form -->
+  <section class="planner-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+          <!-- Progress Steps -->
+          <div class="steps-progress">
+            <div class="step active" data-step="1">
+              <div class="step-number">1</div>
+              <span class="step-label">الوجهة</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="2">
+              <div class="step-number">2</div>
+              <span class="step-label">المدة</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="3">
+              <div class="step-number">3</div>
+              <span class="step-label">الأنشطة</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="4">
+              <div class="step-number">4</div>
+              <span class="step-label">الملخص</span>
+            </div>
+          </div>
+
+          <!-- Multi-step Form -->
+          <form id="plannerForm" class="planner-form">
+
+            <!-- Step 1: Destination -->
+            <div class="form-step active" data-step="1">
+              <div class="step-header">
+                <h3><i class="bi bi-geo-alt-fill"></i> اختر وجهتك</h3>
+                <p>أي منطقة ترغب في استكشافها؟</p>
+              </div>
+
+              <div class="destination-options">
+                <label class="destination-card">
+                  <input type="radio" name="destination" value="coast" data-price="25000" onchange="calculatePrice()">
+                  <div class="destination-content">
+                    <div class="destination-icon">
+                      <i class="bi bi-water"></i>
+                    </div>
+                    <div class="destination-info">
+                      <h4>الساحل السوري</h4>
+                      <p>شواطئ وجبال اللاذقية وطرطوس</p>
+                      <span class="destination-price">25,000 ل.س / يوم</span>
+                    </div>
+                    <div class="destination-check">
+                      <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="destination-card">
+                  <input type="radio" name="destination" value="desert" data-price="20000" onchange="calculatePrice()">
+                  <div class="destination-content">
+                    <div class="destination-icon">
+                      <i class="bi bi-sun-fill"></i>
+                    </div>
+                    <div class="destination-info">
+                      <h4>البادية السورية</h4>
+                      <p>صحراء تدمر وبادية الشام</p>
+                      <span class="destination-price">20,000 ل.س / يوم</span>
+                    </div>
+                    <div class="destination-check">
+                      <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="destination-card">
+                  <input type="radio" name="destination" value="qalamoun" data-price="18000" onchange="calculatePrice()">
+                  <div class="destination-content">
+                    <div class="destination-icon">
+                      <i class="bi bi-mountains"></i>
+                    </div>
+                    <div class="destination-info">
+                      <h4>جبال القلمون</h4>
+                      <p>الطبيعة الجبلية في ريف دمشق</p>
+                      <span class="destination-price">18,000 ل.س / يوم</span>
+                    </div>
+                    <div class="destination-check">
+                      <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn-next" onclick="nextStep(2)">
+                  التالي <i class="bi bi-arrow-left"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Duration -->
+            <div class="form-step" data-step="2">
+              <div class="step-header">
+                <h3><i class="bi bi-calendar-week-fill"></i> حدد مدة الرحلة</h3>
+                <p>كم يوماً تريد أن تستمتع بالمغامرة؟</p>
+              </div>
+
+              <div class="duration-selector">
+                <div class="duration-input-group">
+                  <label for="tripDays" class="form-label">عدد الأيام</label>
+                  <div class="duration-control">
+                    <button type="button" class="btn-minus" onclick="changeDays(-1)">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                    <input type="number" id="tripDays" class="days-input" value="1" min="1" max="14" onchange="calculatePrice()">
+                    <button type="button" class="btn-plus" onclick="changeDays(1)">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+                  </div>
+                  <div class="duration-tags">
+                    <button type="button" class="tag-btn" onclick="setDays(1)">يوم واحد</button>
+                    <button type="button" class="tag-btn" onclick="setDays(2)">يومان</button>
+                    <button type="button" class="tag-btn" onclick="setDays(3)">3 أيام</button>
+                    <button type="button" class="tag-btn" onclick="setDays(5)">5 أيام</button>
+                    <button type="button" class="tag-btn" onclick="setDays(7)">أسبوع</button>
+                  </div>
+                </div>
+
+                <div class="duration-summary">
+                  <div class="summary-icon">
+                    <i class="bi bi-calendar-check-fill"></i>
+                  </div>
+                  <div class="summary-text">
+                    <span id="durationText">يوم واحد</span>
+                    <small>من تاريخ اليوم</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn-prev" onclick="prevStep(1)">
+                  <i class="bi bi-arrow-right"></i> السابق
+                </button>
+                <button type="button" class="btn-next" onclick="nextStep(3)">
+                  التالي <i class="bi bi-arrow-left"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Activities -->
+            <div class="form-step" data-step="3">
+              <div class="step-header">
+                <h3><i class="bi bi-activity"></i> اختر أنشطتك</h3>
+                <p>ما الأنشطة التي ترغب في تجربتها؟</p>
+              </div>
+
+              <div class="activities-grid">
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="hiking" data-price="5000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-person-walking"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>مشي طويل</h5>
+                      <p>جولات مشي استكشافية</p>
+                      <span class="activity-price">+5,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="bedouin" data-price="15000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-fire"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>سهرة بدوية</h5>
+                      <p>تجربة العشاء والموسيقى البدوية</p>
+                      <span class="activity-price">+15,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="horse" data-price="20000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-triangle-fill"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>ركوب خيل</h5>
+                      <p>جولة ركوب خيل لمدة ساعتين</p>
+                      <span class="activity-price">+20,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="camping" data-price="10000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-tent-fill"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>تخييم ليلي</h5>
+                      <p>تجربة التخييم مع وجبة عشاء</p>
+                      <span class="activity-price">+10,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="photography" data-price="8000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-camera-fill"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>جولة تصوير</h5>
+                      <p>جولة تصوير فوتوغرافي مع مرشد</p>
+                      <span class="activity-price">+8,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="stargazing" data-price="6000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-stars"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>مراقبة النجوم</h5>
+                      <p>جولة مراقبة النجوم مع تلسكوب</p>
+                      <span class="activity-price">+6,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="cooking" data-price="7000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-egg-fried"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>طبخ تقليدي</h5>
+                      <p>تعلم طبخ الأكلات الشعبية</p>
+                      <span class="activity-price">+7,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="activity-card">
+                  <input type="checkbox" name="activities" value="camel" data-price="25000" onchange="calculatePrice()">
+                  <div class="activity-content">
+                    <div class="activity-icon">
+                      <i class="bi bi-hexagon-fill"></i>
+                    </div>
+                    <div class="activity-info">
+                      <h5>ركوب جمل</h5>
+                      <p>تجربة ركوب الجمل في الصحراء</p>
+                      <span class="activity-price">+25,000 ل.س</span>
+                    </div>
+                    <div class="activity-check">
+                      <i class="bi bi-check-lg"></i>
+                    </div>
+                  </div>
+                </label>
+
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn-prev" onclick="prevStep(2)">
+                  <i class="bi bi-arrow-right"></i> السابق
+                </button>
+                <button type="button" class="btn-next" onclick="nextStep(4)">
+                  التالي <i class="bi bi-arrow-left"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 4: Summary -->
+            <div class="form-step" data-step="4">
+              <div class="step-header">
+                <h3><i class="bi bi-clipboard-check-fill"></i> ملخص رحلتك</h3>
+                <p>راجع تفاصيل رحلتك قبل الحجز</p>
+              </div>
+
+              <div class="summary-planner">
+                <div class="summary-card-planner">
+                  <div class="summary-item">
+                    <div class="summary-icon-box">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="summary-details">
+                      <span class="summary-label">الوجهة</span>
+                      <span class="summary-value" id="summaryDestination">-</span>
+                    </div>
+                  </div>
+
+                  <div class="summary-item">
+                    <div class="summary-icon-box">
+                      <i class="bi bi-calendar3"></i>
+                    </div>
+                    <div class="summary-details">
+                      <span class="summary-label">المدة</span>
+                      <span class="summary-value" id="summaryDuration">-</span>
+                    </div>
+                  </div>
+
+                  <div class="summary-item">
+                    <div class="summary-icon-box">
+                      <i class="bi bi-activity"></i>
+                    </div>
+                    <div class="summary-details">
+                      <span class="summary-label">الأنشطة المختارة</span>
+                      <span class="summary-value" id="summaryActivities">-</span>
+                    </div>
+                  </div>
+
+                  <div class="summary-divider"></div>
+
+                  <div class="summary-item total-item">
+                    <div class="summary-details">
+                      <span class="summary-label">التكلفة الإجمالية</span>
+                      <span class="summary-value total-price" id="summaryTotal">0 ل.س</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="booking-form">
+                  <h4><i class="bi bi-person-fill"></i> معلومات الحجز</h4>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">الاسم الكامل</label>
+                      <input type="text" class="form-control" id="bookingName" placeholder="أدخل اسمك الكامل" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">رقم الهاتف</label>
+                      <input type="tel" class="form-control" id="bookingPhone" placeholder="+963" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">البريد الإلكتروني</label>
+                    <input type="email" class="form-control" id="bookingEmail" placeholder="example@email.com">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">ملاحظات إضافية</label>
+                    <textarea class="form-control" id="bookingNotes" rows="2" placeholder="أي طلبات خاصة..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-actions">
+                <button type="button" class="btn-prev" onclick="prevStep(3)">
+                  <i class="bi bi-arrow-right"></i> السابق
+                </button>
+                <button type="button" class="btn-book" onclick="submitBooking()">
+                  <i class="bi bi-check-circle-fill"></i> تأكيد الحجز
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Success Modal -->
+  <div class="booking-modal" id="bookingModal">
+    <div class="modal-content">
+      <div class="modal-icon">
+        <i class="bi bi-check-circle-fill"></i>
+      </div>
+      <h3>تم إرسال طلب الحجز بنجاح!</h3>
+      <p>سنقوم بالتواصل معك خلال 24 ساعة لتأكيد تفاصيل رحلتك</p>
+      <div class="modal-details" id="modalDetails"></div>
+      <button class="btn-close-modal" onclick="closeBookingModal()">
+        <i class="bi bi-house-fill"></i> العودة للرئيسية
+      </button>
+    </div>
+  </div>
+
+  <!-- التذييل -->
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="row">
+      <!-- العمود 1: اللوجو والوصف -->
+      <div class="col-md-4 mb-4">
+        <a href="../index.html" class="footer-brand">
+          <img src="../images/logo.png" alt="هيما" class="footer-logo">
+          <span class="footer-brand-text">هيما</span>
+        </a>
+        <p class="footer-desc">منصتك الأولى لتنظيم رحلات السفاري والتخييم في سوريا. نقدم تجارب فريدة تجمع بين المغامرة والأمان.</p>
+        <div class="social-links">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="https://wa.me/963933123456" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- العمود 2: روابط سريعة -->
+      <div class="col-md-2 mb-4">
+        <h5 class="footer-title">روابط سريعة</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="gallery.html">استكشف سوريا</a></li>
+          <li><a href="checklist.html">دليل المعدات</a></li>
+          <li><a href="planner.html">صمم رحلتك</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود 3: أنواع الرحلات -->
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">أنواع الرحلات</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html#safari-trips">سفاري صحراوي</a></li>
+          <li><a href="../index.html#forest-trips">تخييم غابات</a></li>
+          <li><a href="gallery.html?filter=historical">رحلات تاريخية</a></li>
+          <li><a href="gallery.html?filter=nature">رحلات جبلية</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود 4: تواصل معنا -->
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">تواصل معنا</h5>
+        <ul class="footer-contact">
+          <li><i class="bi bi-geo-alt"></i> دمشق، سوريا - شارع الثورة</li>
+          <li><i class="bi bi-telephone"></i> +963 11 123 4567</li>
+          <li><i class="bi bi-envelope"></i> info@hima.sy</li>
+          <li><i class="bi bi-whatsapp"></i> +963 933 123 456</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="footer-bottom">
+      <p>شركة هيما - جميع الحقوق محفوظة © <span class="copyright-year"></span></p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.bundle.js"></script>
+  <script src="../js/planner.bundle.js"></script>
+
+  <script>
+    document.querySelectorAll('.copyright-year').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

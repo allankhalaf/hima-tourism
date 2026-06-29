@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا - هيما سوريا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- شريط التنقل -->
+<nav class="navbar navbar-expand-lg navbar-planeteer fixed-top" id="mainNav">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="../index.html">
+      <img src="../images/logo.png" alt="هيما" class="brand-logo">
+      <span class="brand-text">هيما</span>
+    </a>
+    
+    <!-- الروابط -->
+<ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills">
+  <li class="nav-item"><a class="nav-link" href="../index.html">الرئيسية</a></li>
+  <li class="nav-item"><a class="nav-link" href="../index.html#safari-trips">الرحلات</a></li>
+  <li class="nav-item"><a class="nav-link" href="../index.html#reviews">التقييمات</a></li>
+  <li class="nav-item"><a class="nav-link" href="gallery.html">استكشف سوريا</a></li>
+  <li class="nav-item"><a class="nav-link" href="checklist.html">دليل المعدات</a></li>
+  <li class="nav-item"><a class="nav-link" href="planner.html">صمم رحلتك</a></li>
+  <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+</ul>
+  </div>
+</nav>
+
+  <!-- رأس صفحة التواصل -->
+  <section class="contact-hero" id="contact-hero">
+    <div class="container">
+      <h1>تواصل معنا</h1>
+      <p>نحن هنا لمساعدتك في تخطيط مغامرتك القادمة في سوريا</p>
+    </div>
+  </section>
+
+  <!-- قسم النموذج والمعلومات -->
+  <section class="contact-section" id="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 mb-4">
+          <div class="contact-form-wrapper">
+            <h3>أرسل لنا رسالتك</h3>
+            <form id="contact-form" novalidate>
+              <div class="mb-3">
+                <label class="form-label">الاسم الكامل *</label>
+                <input type="text" class="form-control" id="contact-name" placeholder="أدخل اسمك الثلاثي">
+                <div class="invalid-feedback">الاسم يجب أن يكون 3 أحرف على الأقل</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">البريد الإلكتروني *</label>
+                <input type="email" class="form-control" id="contact-email" placeholder="example@email.com">
+                <div class="invalid-feedback">الرجاء إدخال بريد إلكتروني صحيح</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">رقم الهاتف *</label>
+                  <input type="tel" class="form-control" id="contact-phone" placeholder="09xxxxxxxx">
+                  <div class="invalid-feedback">الرجاء إدخال رقم هاتف صحيح (10 أرقام)</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">عدد التذاكر *</label>
+                  <input type="number" class="form-control" id="contact-tickets" placeholder="1-20" min="1" max="20">
+                  <div class="invalid-feedback">عدد التذاكر يجب أن يكون بين 1 و 20</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">نوع الرحلة المطلوبة *</label>
+                <select class="form-control" id="contact-trip-type" required>
+                  <option value="">اختر نوع الرحلة</option>
+                  <option value="safari">سفاري صحراوي - تدمر</option>
+                  <option value="forest">تخييم غابات - الساحل</option>
+                  <option value="mountain">رحلة جبلية - اللاذقية</option>
+                  <option value="history">رحلة تاريخية - حلب</option>
+                  <option value="other">أخرى</option>
+                </select>
+                <div class="invalid-feedback">الرجاء اختيار نوع الرحلة</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">الرسالة *</label>
+                <textarea class="form-control" id="contact-message" rows="4" placeholder="اكتب رسالتك هنا..."></textarea>
+                <div class="invalid-feedback">الرسالة يجب أن تكون 10 أحرف على الأقل</div>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="bi bi-send"></i> إرسال الرسالة
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="contact-info-wrapper">
+            <div class="info-card">
+              <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
+              <div class="info-content">
+                <h5>العنوان</h5>
+                <p>دمشق، سوريا - شارع الثورة - مجمع دمشق التجاري</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="bi bi-telephone"></i></div>
+              <div class="info-content">
+                <h5>الهاتف</h5>
+                <p>+963 11 123 4567<br>+963 933 123 456</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="bi bi-envelope"></i></div>
+              <div class="info-content">
+                <h5>البريد الإلكتروني</h5>
+                <p>info@hima.sy<br>support@hima.sy</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-icon"><i class="bi bi-whatsapp"></i></div>
+              <div class="info-content">
+                <h5>واتساب</h5>
+                <p>+963 933 123 456<br>متاح للاستشارات السريعة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الخريطة -->
+  <section class="map-section mb-5" id="map-section">
+    <div class="container">
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.0688548082656!2d36.2765!3d33.5138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6dc413e99c1%3A0x6b5f5b5b5b5b5b5b!2sDamascus%2C%20Syria!5e0!3m2!1sen!2sjo!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم ساعات العمل -->
+  <section class="hours-section" id="hours-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="hours-card">
+            <h4>🕐 ساعات عمل الدعم</h4>
+            <ul class="hours-list list-unstyled">
+              <li><span class="day">السبت - الخميس</span><span class="time">8:00 ص - 8:00 م</span></li>
+              <li><span class="day">الجمعة</span><span class="time">1:00 م - 8:00 م</span></li>
+              <li><span class="day">العطلات الرسمية</span><span class="time">10:00 ص - 5:00 م</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="hours-card">
+            <h4>📍 مناطق انطلاق الرحلات</h4>
+            <ul class="hours-list list-unstyled">
+              <li><span class="day">دمشق - المزة</span><span class="time">نقطة التجمع الرئيسية</span></li>
+              <li><span class="day">حلب - ساحة سعد الله الجابري</span><span class="time">للرحلات الشمالية</span></li>
+              <li><span class="day">اللاذقية - الكورنيش</span><span class="time">للرحلات الساحلية</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+ <footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="row">
+      <!-- العمود 1: اللوجو والوصف -->
+      <div class="col-md-4 mb-4">
+        <a href="../index.html" class="footer-brand">
+          <img src="../images/logo.png" alt="هيما" class="footer-logo">
+          <span class="footer-brand-text">هيما</span>
+        </a>
+        <p class="footer-desc">منصتك الأولى لتنظيم رحلات السفاري والتخييم في سوريا. نقدم تجارب فريدة تجمع بين المغامرة والأمان.</p>
+        <div class="social-links">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="https://wa.me/963933123456" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- العمود 2: روابط سريعة -->
+      <div class="col-md-2 mb-4">
+        <h5 class="footer-title">روابط سريعة</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="gallery.html">استكشف سوريا</a></li>
+          <li><a href="checklist.html">دليل المعدات</a></li>
+          <li><a href="planner.html">صمم رحلتك</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود 3: أنواع الرحلات -->
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">أنواع الرحلات</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html#safari-trips">سفاري صحراوي</a></li>
+          <li><a href="../index.html#forest-trips">تخييم غابات</a></li>
+          <li><a href="gallery.html?filter=historical">رحلات تاريخية</a></li>
+          <li><a href="gallery.html?filter=nature">رحلات جبلية</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود 4: تواصل معنا -->
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">تواصل معنا</h5>
+        <ul class="footer-contact">
+          <li><i class="bi bi-geo-alt"></i> دمشق، سوريا - شارع الثورة</li>
+          <li><i class="bi bi-telephone"></i> +963 11 123 4567</li>
+          <li><i class="bi bi-envelope"></i> info@hima.sy</li>
+          <li><i class="bi bi-whatsapp"></i> +963 933 123 456</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="footer-bottom">
+      <p>شركة هيما - جميع الحقوق محفوظة © <span class="copyright-year"></span></p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.bundle.js"></script>
+
+  <script>
+    document.querySelectorAll('.copyright-year').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+  </script>
+
+</body>
+</html>

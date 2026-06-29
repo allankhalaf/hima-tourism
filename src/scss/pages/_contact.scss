@@ -1,0 +1,307 @@
+// ═══════════════════════════════════════════════════════
+// تنسيقات صفحة التواصل - _contact.scss (Modern Design)
+// ═══════════════════════════════════════════════════════
+
+@use "sass:color";
+@use '../base/variables' as *;
+
+// ─── قسم رأس الصفحة ───
+.contact-hero {
+  background: linear-gradient(135deg, $primary-color, color.adjust($primary-color, $lightness: -20%));
+  padding: 6rem 0 4rem;
+  text-align: center;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: $white;
+    position: relative;
+  }
+
+  p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+// ─── قسم النموذج والمعلومات ───
+.contact-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, $light-color, rgba($primary-color, 0.03));
+
+  .contact-form-wrapper {
+    background: rgba($white, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 3rem;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-xl;
+    border: 1px solid rgba($white, 0.6);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, $accent-color, $secondary-color);
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      color: $dark-color;
+      font-weight: 700;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: $dark-color;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-control {
+      border: 2px solid rgba($text-color, 0.08);
+      border-radius: $border-radius;
+      padding: 0.875rem 1rem;
+      transition: all $transition-speed ease;
+      background: rgba($white, 0.8);
+      font-size: 1rem;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0 4px rgba($primary-color, 0.1);
+        background: $white;
+      }
+
+      &.is-invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
+      }
+
+      &.is-valid {
+        border-color: #198754;
+        box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1);
+      }
+    }
+
+    .invalid-feedback {
+      text-align: right;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: #dc3545;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, $primary-color, color.adjust($primary-color, $lightness: -10%));
+      color: $white;
+      padding: 1rem 2rem;
+      border-radius: $border-radius;
+      font-weight: 600;
+      width: 100%;
+      border: none;
+      transition: all $transition-speed ease;
+      box-shadow: $shadow-md;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+        background: linear-gradient(135deg, color.adjust($primary-color, $lightness: -5%), color.adjust($primary-color, $lightness: -15%));
+      }
+
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .contact-info-wrapper {
+    .info-card {
+      background: rgba($white, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.75rem;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-md;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      transition: all $transition-speed ease;
+      border: 1px solid rgba($white, 0.6);
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, $primary-color, $accent-color);
+        border-radius: 0 4px 4px 0;
+      }
+
+      &:hover {
+        transform: translateX(-8px);
+        box-shadow: $shadow-xl;
+      }
+
+      .info-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: $border-radius;
+        background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($accent-color, 0.1));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary-color;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        transition: all $transition-speed ease;
+      }
+
+      &:hover .info-icon {
+        background: linear-gradient(135deg, $primary-color, color.adjust($primary-color, $lightness: -10%));
+        color: $white;
+        transform: scale(1.1);
+      }
+
+      .info-content {
+        h5 {
+          font-size: 1.15rem;
+          margin-bottom: 0.5rem;
+          color: $dark-color;
+          font-weight: 700;
+        }
+
+        p {
+          color: color.adjust($text-color, $lightness: 15%);
+          margin-bottom: 0;
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+// ─── قسم الخريطة ───
+.map-section {
+  .map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    box-shadow: $shadow-xl;
+    border: 4px solid $white;
+    position: relative;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+// ─── قسم ساعات العمل ───
+.hours-section {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, rgba($primary-color, 0.03), $light-color);
+
+  .hours-card {
+    background: rgba($white, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-lg;
+    text-align: center;
+    border: 1px solid rgba($white, 0.6);
+    height: 100%;
+    transition: all $transition-speed ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-xl;
+    }
+
+    h4 {
+      color: $dark-color;
+      margin-bottom: 1.75rem;
+      font-weight: 700;
+      font-size: 1.35rem;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, $primary-color, $accent-color);
+        border-radius: 2px;
+      }
+    }
+
+    .hours-list {
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba($text-color, 0.08);
+        transition: all $transition-speed ease;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background: rgba($primary-color, 0.02);
+          margin: 0 -1rem;
+          padding: 1rem;
+          border-radius: $border-radius;
+        }
+
+        .day {
+          font-weight: 600;
+          color: $dark-color;
+        }
+
+        .time {
+          color: $primary-color;
+          font-weight: 700;
+          background: rgba($primary-color, 0.08);
+          padding: 0.25rem 0.75rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

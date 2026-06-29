@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استكشف سوريا - هيما</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/gallery.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+  <!-- شريط التنقل -->
+ <nav class="navbar navbar-expand-lg navbar-planeteer fixed-top" id="mainNav">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="../index.html">
+      <img src="../images/logo.png" alt="هيما" class="brand-logo">
+      <span class="brand-text">هيما</span>
+    </a>
+    
+    <!-- الروابط -->
+ <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills">
+  <li class="nav-item"><a class="nav-link" href="../index.html">الرئيسية</a></li>
+  <li class="nav-item"><a class="nav-link" href="../index.html#safari-trips">الرحلات</a></li>
+  <li class="nav-item"><a class="nav-link" href="../index.html#reviews">التقييمات</a></li>
+  <li class="nav-item"><a class="nav-link" href="gallery.html">استكشف سوريا</a></li>
+  <li class="nav-item"><a class="nav-link" href="checklist.html">دليل المعدات</a></li>
+  <li class="nav-item"><a class="nav-link" href="planner.html">صمم رحلتك</a></li>
+  <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+</ul>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="page-hero gallery-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>استكشف جمال سوريا</h1>
+        <p>اكتشف أجمل المعالم السياحية والتاريخية والطبيعية في سوريا</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Buttons -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-buttons-wrapper">
+        <button class="filter-btn active" data-filter="all">
+          <i class="bi bi-grid-fill"></i> الكل
+        </button>
+        <button class="filter-btn" data-filter="historical">
+          <i class="bi bi-bank2"></i> أثري وتاريخي
+        </button>
+        <button class="filter-btn" data-filter="nature">
+          <i class="bi bi-tree-fill"></i> طبيعة وغابات
+        </button>
+        <button class="filter-btn" data-filter="coastal">
+          <i class="bi bi-water"></i> ساحلي
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="row gallery-grid" id="galleryGrid">
+
+        <!-- تدمر -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="historical">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/palmyra.jpg" alt="آثار تدمر" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('palmyra')">
+                  <i class="bi bi-eye-fill"></i>
+                </button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-palmyra', name: 'رحلة تدمر الأثرية', price: 75000})">
+                  <i class="bi bi-cart-plus-fill"></i>
+                </button>
+              </div>
+              <span class="category-badge historical">أثري وتاريخي</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">آثار تدمر</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة حمص</p>
+              <p class="card-desc">مدينة النخيل الأثرية، واحدة من أهم المدن القديمة في العالم. تضم أعمدة معبد بعل وقوس النصر والمسرح الروماني.</p>
+              <div class="card-footer">
+                <span class="price">75,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يومان</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- قلعة الحصن -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="historical">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/Alhussen.jpg" alt="قلعة الحصن" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('krak')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-krak', name: 'رحلة قلعة الحصن', price: 60000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge historical">أثري وتاريخي</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">قلعة الحصن</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة حمص</p>
+              <p class="card-desc">أحد أهم القلاع الصليبية في الشرق الأوسط، تتميز بتحصيناتها الضخمة وإطلالتها الخلابة على وادي النهر.</p>
+              <div class="card-footer">
+                <span class="price">60,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يوم واحد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- كسب -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="coastal">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/kasab.jpg" alt="كسب" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('kasab')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-kasab', name: 'رحلة كسب الساحلية', price: 55000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge coastal">ساحلي</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">كسب</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة اللاذقية</p>
+              <p class="card-desc">قرية ساحلية ساحرة تطل على البحر الأبيض المتوسط، تتميز بأشجار السنديان العتيقة والطبيعة الخضراء.</p>
+              <div class="card-footer">
+                <span class="price">55,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يومان</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- مشتى الحلو -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="nature">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/mashta.jpg" alt="مشتى الحلو" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('mashta')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-mashta', name: 'رحلة مشتى الحلو', price: 40000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge nature">طبيعة وغابات</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">مشتى الحلو</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة طرطوس</p>
+              <p class="card-desc">قرية جبلية خلابة تتميز بأشجار الصنوبر والأشجار المثمرة، وجوها المعتدل صيفاً والبارد شتاءً.</p>
+              <div class="card-footer">
+                <span class="price">40,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يوم واحد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- بادية الشام -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="nature">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/badia.jpg" alt="بادية الشام" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('badia')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-badia', name: 'سفاري بادية الشام', price: 120000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge nature">طبيعة وغابات</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">بادية الشام</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة دير الزور</p>
+              <p class="card-desc">صحراء شاسعة تمتد عبر سوريا والعراق والأردن، تتميز بتكويناتها الرملية وسمائها المرصعة بالنجوم.</p>
+              <div class="card-footer">
+                <span class="price">120,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> 3 أيام</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- صلنفة -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="coastal">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/slenfeh.jpg" alt="صلنفة" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('slenfeh')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-slenfeh', name: 'رحلة صلنفة', price: 45000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge coastal">ساحلي</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">صلنفة</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة اللاذقية</p>
+              <p class="card-desc">قرية جبلية تطل على الساحل السوري من ارتفاع 1130 متراً، تتميز بمناخها المعتدل وإطلالتها البانورامية.</p>
+              <div class="card-footer">
+                <span class="price">45,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يوم واحد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- أبواب الهوى -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="historical">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/abwab.jpg" alt="أبواب الهوى" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('abwab')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-abwab', name: 'رحلة أبواب الهوى', price: 50000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge historical">أثري وتاريخي</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">أبواب الهوى</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة السويداء</p>
+              <p class="card-desc">موقع أثري يعود للعصر الروماني، يضم بوابات ضخمة محفورة في الصخر وآثاراً لمعابد قديمة.</p>
+              <div class="card-footer">
+                <span class="price">50,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يوم واحد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- جبال القلمون -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="nature">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/qalamoun.jpg" alt="جبال القلمون" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('qalamoun')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-qalamoun', name: 'رحلة جبال القلمون', price: 35000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge nature">طبيعة وغابات</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">جبال القلمون</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة ريف دمشق</p>
+              <p class="card-desc">سلسلة جبلية خلابة تتميز بغابات الصنوبر والأرز والمروج الخضراء، وجوها المعتدل صيفاً.</p>
+              <div class="card-footer">
+                <span class="price">35,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يوم واحد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- صافيتا -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="coastal">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/safita.jpg" alt="صافيتا" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('safita')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-safita', name: 'رحلة صافيتا', price: 48000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge coastal">ساحلي</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">صافيتا</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة طرطوس</p>
+              <p class="card-desc">مدينة ساحلية تاريخية تضم برج صافيتا الصليبي الشهير، وتتميز بأشجار الزيتون والحمضيات.</p>
+              <div class="card-footer">
+                <span class="price">48,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يوم واحد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- معرة النعمان -->
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="historical">
+          <div class="gallery-card">
+            <div class="card-image">
+              <img src="../images/maarat.jpg" alt="معرة النعمان" loading="lazy">
+              <div class="card-overlay">
+                <button class="btn-view" onclick="openLightbox('maarat')"><i class="bi bi-eye-fill"></i></button>
+                <button class="btn-add-cart" onclick="HimaCart.add({id: 'dest-maarat', name: 'رحلة معرة النعمان', price: 65000})"><i class="bi bi-cart-plus-fill"></i></button>
+              </div>
+              <span class="category-badge historical">أثري وتاريخي</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"> قلعة حارم</h5>
+              <p class="card-location"><i class="bi bi-geo-alt-fill"></i> محافظة إدلب</p>
+              <p class="card-desc">مدينة تاريخية تضم متحف الفسيفساء الأكبر في الشرق الأوسط، وآثاراً رومانية وبيزنطية فريدة.</p>
+              <div class="card-footer">
+                <span class="price">65,000 ل.س</span>
+                <span class="duration"><i class="bi bi-clock"></i> يومان</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Message -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <i class="bi bi-search"></i>
+        <h3>لا توجد نتائج</h3>
+        <p>جرب تصنيفاً آخر لاستكشاف المزيد من الوجهات</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <img src="" alt="" id="lightboxImage">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- التذييل -->
+  <footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="row">
+      <!-- العمود 1: اللوجو والوصف -->
+      <div class="col-md-4 mb-4">
+        <a href="../index.html" class="footer-brand">
+          <img src="../images/logo.png" alt="هيما" class="footer-logo">
+          <span class="footer-brand-text">هيما</span>
+        </a>
+        <p class="footer-desc">منصتك الأولى لتنظيم رحلات السفاري والتخييم في سوريا. نقدم تجارب فريدة تجمع بين المغامرة والأمان.</p>
+        <div class="social-links">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="https://wa.me/963933123456" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- العمود 2: روابط سريعة -->
+      <div class="col-md-2 mb-4">
+        <h5 class="footer-title">روابط سريعة</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="gallery.html">استكشف سوريا</a></li>
+          <li><a href="checklist.html">دليل المعدات</a></li>
+          <li><a href="planner.html">صمم رحلتك</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود 3: أنواع الرحلات -->
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">أنواع الرحلات</h5>
+        <ul class="footer-links">
+          <li><a href="../index.html#safari-trips">سفاري صحراوي</a></li>
+          <li><a href="../index.html#forest-trips">تخييم غابات</a></li>
+          <li><a href="gallery.html?filter=historical">رحلات تاريخية</a></li>
+          <li><a href="gallery.html?filter=nature">رحلات جبلية</a></li>
+        </ul>
+      </div>
+
+      <!-- العمود 4: تواصل معنا -->
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">تواصل معنا</h5>
+        <ul class="footer-contact">
+          <li><i class="bi bi-geo-alt"></i> دمشق، سوريا - شارع الثورة</li>
+          <li><i class="bi bi-telephone"></i> +963 11 123 4567</li>
+          <li><i class="bi bi-envelope"></i> info@hima.sy</li>
+          <li><i class="bi bi-whatsapp"></i> +963 933 123 456</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="footer-bottom">
+      <p>شركة هيما - جميع الحقوق محفوظة © <span class="copyright-year"></span></p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.bundle.js"></script>
+  <script src="../js/gallery.bundle.js"></script>
+  
+  <script>
+    document.querySelectorAll('.copyright-year').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

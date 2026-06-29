@@ -1,0 +1,134 @@
+// ═══════════════════════════════════════════════════════
+// معرض الصور التفاعلي - _carousel.scss
+// ═══════════════════════════════════════════════════════
+
+@use "sass:color";
+@use '../base/variables' as *;
+
+.hero-carousel {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 0;
+
+  .carousel-inner {
+    height: 100%;
+  }
+
+  .carousel-item {
+    height: 100%;
+    position: relative;
+
+    .carousel-img-wrapper {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    // طبقة التعتيم فوق الصورة
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to top,
+        rgba($dark-color, 0.8) 0%,
+        rgba($dark-color, 0.3) 50%,
+        rgba($dark-color, 0.1) 100%
+      );
+    }
+  }
+
+  .carousel-caption {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    left: 10%;
+    z-index: 10;
+    text-align: right;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: $white;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: rgba($white, 0.9);
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .btn-explore {
+      background-color: $secondary-color;
+      color: $dark-color;
+      padding: 0.75rem 2rem;
+      border-radius: $border-radius;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background-color: color.adjust($secondary-color, $lightness: -10%);
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+      }
+    }
+  }
+
+  // أزرار التنقل
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background-color: rgba($white, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all $transition-speed ease;
+
+    &:hover {
+      background-color: rgba($white, 0.4);
+      opacity: 1;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  // مؤشرات الشرائح
+  .carousel-indicators {
+    bottom: 20px;
+
+    button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 0 6px;
+      background-color: rgba($white, 0.5);
+      border: none;
+      transition: all $transition-speed ease;
+
+      &.active {
+        background-color: $secondary-color;
+        width: 30px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

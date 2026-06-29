@@ -1,0 +1,44 @@
+// ═══════════════════════════════════════════════════════
+// ملف المتغيرات العامة - _variables.scss
+// ═══════════════════════════════════════════════════════
+
+// ─── ألوان الموقع العامة (Modern Palette) ───
+$primary-color:    #1a5f3c;      // أخضر سوري - اللون الرئيسي
+$secondary-color:  #c41e3a;      // أحمر سوري - لون ثانوي
+$accent-color:     #f4a261;      // برتقالي دافئ - لون مميز
+$dark-color:       #1a1a2e;      // أزرق داكن - للنصوص الرئيسية
+$light-color:      #f8f9fa;      // أبيض مائل للرمادي - خلفيات
+$text-color:       #333333;      // لون النص الأساسي
+$white:            #ffffff;
+
+// ─── ألوان رحلات السفاري (Safari Theme) ───
+$safari-primary:   #d4a373;      // لون رملي دافئ - صحراء تدمر
+$safari-secondary: #e76f51;      // برتقالي حار - غروب الشمس
+$safari-bg:        #fef3e2;      // خلفية رملية فاتحة
+$safari-dark:      #8b5e3c;      // بني داكن - صحراء سورية
+$safari-text:      #5c4033;      // بني للنصوص
+
+// ─── ألوان رحلات الغابات (Forest Theme) ───
+$forest-primary:   #2d6a4f;      // أخضر غابات الساحل السوري
+$forest-secondary: #1b4332;      // أخضر داكن - جبال الساحل
+$forest-bg:        #e8f5e9;      // خلفية خضراء فاتحة
+$forest-dark:      #1b4332;      // أخضر غامق
+$forest-text:      #2d6a4f;      // أخضر للنصوص
+
+// ─── الخطوط ───
+$font-primary: 'Cairo', 'Segoe UI', sans-serif;
+$font-heading: 'Cairo', 'Segoe UI', sans-serif;
+
+// ─── المسافات والأحجام ───
+$spacer: 1rem;
+$border-radius: 0.75rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+$transition-speed: 0.3s;
+
+// ─── ظلال حديثة ───
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-glow: 0 0 20px rgba(26, 95, 60, 0.15);

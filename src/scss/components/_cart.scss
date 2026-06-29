@@ -1,0 +1,263 @@
+// ═══════════════════════════════════════════════════════
+// تنسيقات السلة - _cart.scss
+// ═══════════════════════════════════════════════════════
+
+@use "sass:color";
+@use '../base/variables' as *;
+
+// ─── نافذة السلة المنبثقة ───
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  .cart-modal-content {
+    background: $white;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-xl;
+    width: 100%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: modalSlideIn 0.3s ease;
+  }
+
+  .cart-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba($text-color, 0.08);
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $dark-color;
+      margin: 0;
+    }
+
+    .cart-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: color.adjust($text-color, $lightness: 20%);
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background: rgba($text-color, 0.08);
+        color: $dark-color;
+      }
+    }
+  }
+
+  .cart-modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+
+    .cart-empty {
+      text-align: center;
+      color: color.adjust($text-color, $lightness: 20%);
+      padding: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: rgba($light-color, 0.5);
+      border-radius: $border-radius;
+      margin-bottom: 0.75rem;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background: rgba($light-color, 0.8);
+        transform: translateX(-4px);
+      }
+
+      .cart-item-info {
+        h4 {
+          font-size: 1rem;
+          font-weight: 600;
+          color: $dark-color;
+          margin-bottom: 0.25rem;
+        }
+
+        p {
+          color: $primary-color;
+          font-weight: 700;
+          font-size: 0.95rem;
+          margin: 0;
+        }
+      }
+
+      .cart-item-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        button {
+          width: 32px;
+          height: 32px;
+          border-radius: $border-radius;
+          border: 1px solid rgba($text-color, 0.15);
+          background: $white;
+          color: $dark-color;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all $transition-speed ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background: $primary-color;
+            color: $white;
+            border-color: $primary-color;
+          }
+
+          &.cart-remove {
+            background: rgba(#dc3545, 0.1);
+            border-color: rgba(#dc3545, 0.2);
+            color: #dc3545;
+            font-size: 1rem;
+
+            &:hover {
+              background: #dc3545;
+              color: $white;
+            }
+          }
+        }
+
+        span {
+          font-weight: 700;
+          color: $dark-color;
+          min-width: 24px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .cart-modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid rgba($text-color, 0.08);
+    background: rgba($light-color, 0.3);
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba($text-color, 0.08);
+
+      span:first-child {
+        font-weight: 600;
+        color: $dark-color;
+      }
+
+      span:last-child {
+        font-weight: 800;
+        color: $primary-color;
+        font-size: 1.25rem;
+      }
+    }
+
+    .btn-checkout {
+      width: 100%;
+      padding: 0.875rem;
+      background: linear-gradient(135deg, $primary-color, color.adjust($primary-color, $lightness: -10%));
+      color: $white;
+      border: none;
+      border-radius: $border-radius;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all $transition-speed ease;
+      margin-bottom: 0.75rem;
+      box-shadow: $shadow-md;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+      }
+    }
+
+    .btn-clear {
+      width: 100%;
+      padding: 0.75rem;
+      background: transparent;
+      color: color.adjust($text-color, $lightness: 20%);
+      border: 1px solid rgba($text-color, 0.15);
+      border-radius: $border-radius;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all $transition-speed ease;
+
+      &:hover {
+        background: rgba(#dc3545, 0.08);
+        color: #dc3545;
+        border-color: rgba(#dc3545, 0.3);
+      }
+    }
+  }
+}
+
+// ─── رسالة السلة (Toast) ───
+.cart-toast {
+  animation: slideIn 0.3s ease !important;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,182 @@
+// ═══════════════════════════════════════════════════════
+// تذييل الموقع - _footer.scss (مع دعم اللوغو)
+// ═══════════════════════════════════════════════════════
+
+@use "sass:color";
+@use '../base/variables' as *;
+
+.site-footer {
+  background: linear-gradient(135deg, $dark-color, color.adjust($dark-color, $lightness: -10%));
+  color: rgba($white, 0.85);
+  padding: 5rem 0 2rem;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $primary-color, $accent-color, $secondary-color);
+  }
+
+  .footer-brand {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: $white;
+    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all $transition-speed ease;
+    text-decoration: none;
+
+    .footer-logo {
+      height: 50px;
+      width: auto;
+      border-radius: 10px;
+      transition: transform $transition-speed ease;
+    }
+
+    .footer-brand-text {
+      font-weight: 800;
+      font-size: 1.75rem;
+      color: $white;
+    }
+
+    &:hover {
+      .footer-logo {
+        transform: scale(1.05) rotate(-2deg);
+      }
+      .footer-brand-text {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .footer-desc {
+    color: rgba($white, 0.7);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  .footer-title {
+    color: $white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, $secondary-color, $accent-color);
+      border-radius: 2px;
+    }
+  }
+
+  .footer-links {
+    li {
+      margin-bottom: 0.875rem;
+
+      a {
+        color: rgba($white, 0.7);
+        transition: all $transition-speed ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        padding-right: 0;
+
+        &::before {
+          content: '›';
+          opacity: 0;
+          transition: all $transition-speed ease;
+          margin-left: 0;
+        }
+
+        &:hover {
+          color: $accent-color;
+          padding-right: 0.75rem;
+
+          &::before {
+            opacity: 1;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-contact {
+    li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+
+      i {
+        color: $accent-color;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba($accent-color, 0.1);
+        border-radius: 50%;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba($white, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      transition: all $transition-speed ease;
+      font-size: 1.1rem;
+      border: 1px solid rgba($white, 0.1);
+
+      &:hover {
+        background: linear-gradient(135deg, $secondary-color, $accent-color);
+        color: $white;
+        transform: translateY(-5px) scale(1.1);
+        border-color: transparent;
+        box-shadow: 0 8px 20px rgba($secondary-color, 0.3);
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba($white, 0.08);
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba($white, 0.5);
+
+    .copyright-year {
+      font-weight: 600;
+      color: rgba($white, 0.7);
+    }
+  }
+}

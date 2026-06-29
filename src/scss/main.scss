@@ -1,0 +1,24 @@
+// ═══════════════════════════════════════════════════════
+// ملف SCSS الرئيسي - main.scss
+// يجمع كل الملفات الجزئية
+// ═══════════════════════════════════════════════════════
+
+// ─── القاعدة الأساسية ───
+@use 'base/variables';
+@use 'base/reset';
+
+// ─── المكونات ───
+@use 'components/navbar';
+@use 'components/carousel';
+@use 'components/card';
+@use 'components/footer';
+@use 'components/cart';  // ← تنسيقات السلة الجديدة
+
+// ─── صفحات الموقع ───
+@use 'pages/home';
+@use 'pages/contact';
+@use 'pages/safari';
+@use 'pages/forest';
+@use 'pages/checklist';
+@use 'pages/gallery';
+@use 'pages/planner';
